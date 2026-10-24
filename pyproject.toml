@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fontdentify"
+version = "0.1.0"
+description = "Identify the font in a picture by matching it against the fonts installed on your machine."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+    "Pillow>=10.0",
+    "fonttools>=4.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+fontdentify = "fontdentify.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["fontdentify*"]
